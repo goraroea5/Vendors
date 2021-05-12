@@ -1,6 +1,7 @@
 import { Button, Chip, Typography} from '@material-ui/core'
 import styled from 'styled-components'
-import {Call, Map} from '@material-ui/icons';
+import { Call, Map, Close, Store } from '@material-ui/icons';
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const VenderCard = styled.div`
   position: relative;
@@ -50,7 +51,7 @@ const handleImgError = e => {
 const Vendor = ({vendor, openGoogleMap}) => {
   return (
     <VenderCard>
-      <VenderImg src={vendor.source} onError={handleImgError}  /> 
+      <VenderImg height="150px" alt="/not-found.png" src={vendor.source} onError={handleImgError}  /> 
       <VenderDetail>
         <h3>{vendor.store_name} </h3>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -62,8 +63,8 @@ const Vendor = ({vendor, openGoogleMap}) => {
         <VenderStatus>
           {
             vendor.open ?  
-            <Chip color="primary" label="เปิดทำการ" style={{boxShadow: "0 6px 8px 0 rgba(0,0,0,0.3)"}} />
-            :  <Chip color="secondary" label="ปิดทำการ" style={{boxShadow: "0 6px 8px 0 rgba(0,0,0,0.3)"}} />
+            <Chip  icon={<Store />} color="primary" label="เปิดทำการ" style={{boxShadow: "0 6px 8px 0 rgba(0,0,0,0.3)"}} />
+            :  <Chip  icon={<Close />} color="secondary" label="ปิดทำการ" style={{boxShadow: "0 6px 8px 0 rgba(0,0,0,0.3)"}} />
           }
         </VenderStatus>
       </VenderDetail>
