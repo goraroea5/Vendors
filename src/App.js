@@ -27,7 +27,6 @@ function App() {
 
   function openGoogleMap(location) {
     window.open("https://maps.google.com?q="+location.latitude+","+location.longitude );
-    console.log('location', location);
   }
 
   const fillterVendors = vendors.filter(vendor => {

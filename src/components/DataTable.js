@@ -57,7 +57,6 @@ const DataTable = ({vendors}) => {
       status: vendor.open
     }
   })
-  console.log('rows',rows);
 
   return(
     <div style={{height: 640, width: '100%'}}>
